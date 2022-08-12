@@ -51,7 +51,10 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+=======
+>>>>>>> a9bddf33d4cc915101b5b044a76d0c2b11b474e5
 </body>
 </html>
 <?php } ?>

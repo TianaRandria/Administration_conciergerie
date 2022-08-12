@@ -51,6 +51,7 @@
                                 <button type="button" class="btn btn-light">
                                     <i class="bi bi-pencil-square"></i> Editer
                                 </button>
+<<<<<<< HEAD
                                 <button
                                     type="button"
                                     class="btn btn-light"
@@ -101,6 +102,11 @@
                                     </div>
                                 </div>
 
+=======
+                                <button type="button" class="btn btn-light">
+                                    <i class="bi bi-trash"></i> Supprimer
+                                </button>
+>>>>>>> a9bddf33d4cc915101b5b044a76d0c2b11b474e5
                             </td>
                         </tr>
                         <?php } ?>
@@ -109,6 +115,9 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+=======
+>>>>>>> a9bddf33d4cc915101b5b044a76d0c2b11b474e5
 </body>
 </html>
