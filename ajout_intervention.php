@@ -25,7 +25,7 @@
     <?php require_once('menu.php'); ?>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-2">
+            <div class="col-md-6 offset-md-3">
                 <div class="text-center my-3">
                     <h1>Ajouter une intervention</h1>
                 </div>
@@ -51,6 +51,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 <?php } ?>
