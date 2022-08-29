@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background-image: url("assets/images/intervention.png");
+            background-repeat: no-repeat;
+            background-size : cover;
+        }
+    </style>
+    
     <title>Liste des interventions</title>
 </head>
 <body>
@@ -32,7 +40,7 @@
                         </a>
                     </div>
                 </div>
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered bg-white">
                     <thead>
                         <tr class="text-center">
                             <th>ID intervention</th>
@@ -60,5 +68,6 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

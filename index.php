@@ -15,6 +15,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background-image: url("assets/images/maintenance.jpg");
+            background-repeat: no-repeat;
+            background-size : cover;
+        } 
+    </style>
     <title>Liste des maintenances</title>
 </head>
 <body>
@@ -32,7 +39,7 @@
                         </a>
                     </div>
                 </div>
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered bg-white">
                     <thead>
                         <tr class="text-center">
                             <th>Date d'intervention</th>
@@ -48,19 +55,69 @@
                             <td><?php echo $maintenance['type_intervention']; ?></td>
                             <td><?php echo $maintenance['numero_etage']; ?></td>
                             <td>
-                                <button type="button" class="btn btn-light">
+                                <button
+                                    type="button"
+                                    class="btn btn-sm btn-light">
                                     <i class="bi bi-pencil-square"></i> Editer
                                 </button>
-                                <button type="button" class="btn btn-light">
+                                <button
+                                    type="button"
+                                    class="btn btn-sm btn-light"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalSupprimer<?php echo $maintenance['id_maintenance']; ?>">
                                     <i class="bi bi-trash"></i> Supprimer
                                 </button>
-                            </td> 
+                            </td>                          
                         </tr>
+
+                        <!-- Modal Supprimer -->
+                        <div
+                            class="modal modal-dialog modal-dialog-centered"
+                            id="modalSupprimer<?php echo $maintenance['id_maintenance']; ?>"
+                            tabindex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5
+                                            class="modal-title"
+                                            id="exampleModalLabel">
+                                            Voulez-vous supprimer ?
+                                        </h5>
+                                        <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary"
+                                            data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary">
+                                            Save changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
