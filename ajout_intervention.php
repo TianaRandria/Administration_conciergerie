@@ -25,11 +25,9 @@
     <?php require_once('menu.php'); ?>
     <div class="container">
         <div class="row">
-<<<<<<< HEAD
+
             <div class="col-md-6 offset-md-3">
-=======
-            <div class="col-md-6 offset-md-2">
->>>>>>> a9bddf33d4cc915101b5b044a76d0c2b11b474e5
+
                 <div class="text-center my-3">
                     <h1>Ajouter une intervention</h1>
                 </div>

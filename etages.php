@@ -59,7 +59,7 @@ body{
                                 <button type="button" class="btn btn-light">
                                     <i class="bi bi-pencil-square"></i> Editer
                                 </button>
-<<<<<<< HEAD
+
                                 <button
                                     type="button"
                                     class="btn btn-light"
@@ -68,9 +68,9 @@ body{
                                     <i class="bi bi-trash"></i> Supprimer
                                 </button>
 
-                                <!-- Modal Supprimer -->
+                                <!-- Modal Supprimer 
                                 <div
-                                    class="modal fade modal-dialog modal-dialog-centered"
+                                    class="modal hide fade modal-dialog modal-dialog-centered"
                                     id="modalSupprimer"
                                     tabindex="-1"
                                     aria-labelledby="exampleModalLabel"
@@ -108,13 +108,7 @@ body{
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-=======
-                                <button type="button" class="btn btn-light">
-                                    <i class="bi bi-trash"></i> Supprimer
-                                </button>
->>>>>>> a9bddf33d4cc915101b5b044a76d0c2b11b474e5
+                                </div> -->
                             </td>
                         </tr>
                         <?php } ?>
