@@ -23,7 +23,7 @@
         }
     </style>
     
-    <title>Liste des interventions</title>
+    <title>LISTE DES INTERVENTIONS</title>
 </head>
 <body>
     <?php require_once('menu.php'); ?>
@@ -32,7 +32,7 @@
             <div class="col-md-12">
                 <div class="d-flex flex-column my-3">
                     <div class="text-center">
-                        <h1>Liste des interventions</h1>
+                        <h1>LISTE DES INTERVENTIONS</h1>
                     </div>
                     <div>
                         <a href="ajout_intervention.php" class="btn btn-light">
@@ -54,9 +54,9 @@
                             <td><?php echo $intervention['id_intervention']; ?></td>
                             <td><?php echo $intervention['type_intervention']; ?></td>
                             <td>
-                                <button type="button" class="btn btn-light">
+                               <a href="modiefierIntervention.php?id=<?php echo $intervention['id_intervention']; ?>"> <button type="button" class="btn btn-light">
                                     <i class="bi bi-pencil-square"></i> Editer
-                                </button>
+                                </button> </a>
                                 <button type="button" class="btn btn-light">
                                     <i class="bi bi-trash"></i> Supprimer
                                 </button>

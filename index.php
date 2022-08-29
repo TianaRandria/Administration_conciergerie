@@ -22,7 +22,7 @@
             background-size : cover;
         } 
     </style>
-    <title>Liste des maintenances</title>
+    <title>LISTE DES MAINTENANCES</title>
 </head>
 <body>
     <?php require_once('menu.php'); ?> 
@@ -31,7 +31,7 @@
             <div class="col-md-12">
                 <div class="d-flex flex-column my-3">
                     <div class="text-center">
-                        <h1>Liste des maintenances</h1>
+                        <h1>LISTE DES MAINTENANCES</h1>
                     </div>
                     <div>
                         <a href="ajout_maintenance.php" class="btn btn-light">
@@ -39,9 +39,11 @@
                         </a>
                     </div>
                 </div>
+                <div class="tableau">
                 <table class="table table-hover table-bordered bg-white">
                     <thead>
                         <tr class="text-center">
+                            <th> Id maintenance</th>
                             <th>Date d'intervention</th>
                             <th>Type d'intervention</th>
                             <th>Etage concerné</th>
@@ -51,15 +53,16 @@
                     <tbody>
                         <?php foreach ($resultats as $maintenance) { ?>
                         <tr class="text-center">
+                            <td><?php echo $maintenance['id_maintenance']; ?></td>
                             <td><?php echo date('d/m/Y', strtotime($maintenance['date_intervention'])); ?></td>
                             <td><?php echo $maintenance['type_intervention']; ?></td>
                             <td><?php echo $maintenance['numero_etage']; ?></td>
                             <td>
-                                <button
+                               <a href="modifierMaintenance.php?id=<?php echo $maintenance['id_maintenance']; ?>"> <button
                                     type="button"
                                     class="btn btn-sm btn-light">
                                     <i class="bi bi-pencil-square"></i> Editer
-                                </button>
+                                </button> </a>
                                 <button
                                     type="button"
                                     class="btn btn-sm btn-light"
@@ -69,9 +72,9 @@
                                 </button>
                             </td>                          
                         </tr>
-
+                       
                         <!-- Modal Supprimer -->
-                        <div
+                       <!-- <div
                             class="modal modal-dialog modal-dialog-centered"
                             id="modalSupprimer<?php echo $maintenance['id_maintenance']; ?>"
                             tabindex="-1"
@@ -110,11 +113,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
+                        </div> -->
+                        
+                        
                         <?php } ?>
                     </tbody>
                 </table>
+                </div>
+               
             </div>
         </div>
     </div>

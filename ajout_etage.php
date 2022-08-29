@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Ajouter un étage</title>
+    <style>
+        body {
+            background-image: url("assets/images/maintenance.jpg");
+            background-repeat: no-repeat;
+            background-size : cover;
+        } 
+    </style>
 </head>
 <body>
     <?php require_once('menu.php'); ?>
@@ -27,7 +34,7 @@
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="text-center my-3">
-                    <h1>Ajouter un étage</h1>
+                    <h1>AJOUTER UNE ETAGE</h1>
                 </div>
                 <form action="" method="POST">
                     <div class="mb-3">

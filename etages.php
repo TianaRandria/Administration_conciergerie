@@ -25,7 +25,7 @@ body{
       
 }
     </style>
-    <title>Liste des étages</title>
+    <title>LISTE DES ETAGES</title>
 </head>
 <body>
     <?php require_once('menu.php'); ?>
@@ -34,7 +34,7 @@ body{
             <div class="col-md-12">
                 <div class="d-flex flex-column my-3">
                     <div class="text-center">
-                        <h1>Liste des étages</h1>
+                        <h1>LISTE DES ETAGES</h1>
                     </div>
                     <div>
                         <a href="ajout_etage.php" class="btn btn-light">

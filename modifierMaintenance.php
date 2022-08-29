@@ -1,11 +1,18 @@
 <?php
-    require_once('db_connect.php'); //require once au lieu de hitaper an'ilay code lava be ao aminy connect.phpd dia io require8once io no soratana @zay miseconnecte ny page**//
+  require_once('db_connect.php');
+  $id_maintenance = $_GET['id'];
 
     // récuperer les étages
     $requete1 = 'SELECT * FROM etages';
     $preparer1 = $db_connect->prepare($requete1); // rehefa avy mi connecte dia mandeha ny prepare 
     $preparer1->execute();
     $etages = $preparer1->fetchAll();
+
+        // récuperer les id maintenance
+        $requete2 = 'SELECT * FROM maintenances';
+        $preparer2 = $db_connect->prepare($requete2); // rehefa avy mi connecte dia mandeha ny prepare 
+        $preparer2->execute();
+        $maintenance = $preparer2->fetchAll();
 
     // récuperer les interventions
     $requete2 = 'SELECT * FROM interventions';
@@ -15,18 +22,23 @@
 
     if(isset($_POST['date']) && isset($_POST['intervention']) && isset($_POST['etage'])) {
         $date = $_POST['date'];
+        $maint = $_POST['maintenance'];
         $intervention = $_POST['intervention'];
         $etage = $_POST['etage'];
-        $requete = 'INSERT INTO maintenances(date_intervention, id_intervention, id_etage) VALUES (:date_intervention, :id_intervention, :id_etage)'; 
+        $requete = "UPDATE maintenances SET id_maintenance = :id_maintenance, date_intervention = :date_intervention, id_intervention = :id_intervention, id_etage = :id_etage WHERE id_maintenance = :id" ; 
         $preparer = $db_connect->prepare($requete);
         $preparer->execute([
-            'date_intervention' => $date,
-            'id_intervention' => $intervention,
-            'id_etage' => $etage
+            ':id_maintenance' => $maint,
+            ':date_intervention' => $date,
+            ':id_intervention' => $intervention,
+            ':id_etage' => $etage,
+            ':id' => $id_maintenance
         ]);
         header('Location: /index.php');
     } else {
+
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -44,7 +56,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-2">
                 <div class="text-center my-3">
-                    <h1>AJOUTER UNE MAINTENANCE</h1>
+                    <h1>MODIFIER UNE MAINTENANCE</h1>
                 </div>
                 <form action="#" method="POST">
                     <div class="mb-3">
@@ -57,6 +69,20 @@
                             required>
                     </div>
                     <div class="mb-3">
+                    <select
+                            class="form-select"
+                            id="maintenance"
+                            name="maintenance"
+                            required>
+                            <option>Choisissez le id de la maintenance</option>
+                            <?php foreach ($maintenance as $maintenance) { ?>
+                            <option
+                                value="<?php echo $maintenance['id_maintenance']; ?>">
+                                <?php echo $maintenance['id_maintenance']; ?>
+                               
+                            </option>
+                            <?php } ?>
+                        </select>
                         <select
                             class="form-select"
                             id="intervention"
@@ -66,7 +92,7 @@
                             <?php foreach ($interventions as $intervention) { ?>
                             <option
                                 value="<?php echo $intervention['id_intervention']; ?>">
-                                <?php echo $intervention['type_intervention'];; ?>
+                                <?php echo $intervention['type_intervention']; ?>
                             </option>
                             <?php } ?>
                         </select>
@@ -87,8 +113,9 @@
                         </select>
                     </div>
                     <div class="d-grid">
+
                         <button type="submit" class="btn btn-primary">
-                            Ajouter la maintenance
+                            Modifier la maintenance
                         </button>
                         <a href="index.php">
                             <i class="bi bi-arrow-left-circle"></i> Retour
