@@ -1,5 +1,5 @@
 <?php
-    require_once('db_connect.php'); //require once au lieu de hitaper an'ilay code lava be ao aminy connect.phpd dia io require8once io no soratana @zay miseconnecte ny page**//
+    require_once('db_connect.php'); //require once au lieu de hitaper an'ilay code lava be ao aminy connect.php d dia io require8once io no soratana @zay miseconnecte ny page**//
     // on récupère les données
     $requete = 'SELECT * FROM etages';
     $preparer = $db_connect->prepare($requete); // rehefa avy mi connecte dia mandeha ny prepare 
@@ -56,17 +56,17 @@ body{
                             <td><?php echo $etage['id_etage']; ?></td>
                             <td><?php echo $etage['numero_etage']; ?></td>
                             <td>
+                            <a href="modifierEtages.php?id=<?php echo $etage['id_etage']; ?>"> <button type="button" class="btn btn-light">
                                 <button type="button" class="btn btn-light">
                                     <i class="bi bi-pencil-square"></i> Editer
-                                </button>
-
-                                <button
+                                </button></a>
+                                <a onClick="return confirm ('voulez-vous vraiment supprimer cet etage?');" href ="supprimerEtage.php?id=<?php echo $etage['id_etage']; ?>"><button
                                     type="button"
                                     class="btn btn-light"
                                     data-bs-toggle="modal"
                                     data-bs-target="#modalSupprimer">
                                     <i class="bi bi-trash"></i> Supprimer
-                                </button>
+                                </button></a>
 
                                 <!-- Modal Supprimer 
                                 <div

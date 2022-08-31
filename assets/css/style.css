@@ -1,9 +1,62 @@
 
-h1{color: rgb(248, 49, 4);
+h1{color: rgb(5, 5, 5);
+    font-family: Arial, Helvetica, sans-serif;
    
 }
 .bg-white{
     color: #0255d3;
 
+}
+
+body{
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
     
+
+    }
+    
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+}
+/* Bordered form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+text-align: center;
+color: black;
+font-family: "autography";
+font-size: 3rem;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: #000501;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: #031804;
+    border: 1px solid #060806;
 }

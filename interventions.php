@@ -54,12 +54,15 @@
                             <td><?php echo $intervention['id_intervention']; ?></td>
                             <td><?php echo $intervention['type_intervention']; ?></td>
                             <td>
-                               <a href="modiefierIntervention.php?id=<?php echo $intervention['id_intervention']; ?>"> <button type="button" class="btn btn-light">
+                               <a href="supprimerIntervention.php?id=<?php echo $intervention['id_intervention']; ?>"> <button type="button" class="btn btn-light">
                                     <i class="bi bi-pencil-square"></i> Editer
                                 </button> </a>
+                                
+                                <a onClick="return confirm ('voulez-vous vraiment supprimer cette intervention?');"href="supprimerIntervention.php?id=<?php echo $intervention['id_intervention']; ?>">
+
                                 <button type="button" class="btn btn-light">
                                     <i class="bi bi-trash"></i> Supprimer
-                                </button>
+                                </button></a>
                             </td>
                         </tr>
                         <?php } ?>
